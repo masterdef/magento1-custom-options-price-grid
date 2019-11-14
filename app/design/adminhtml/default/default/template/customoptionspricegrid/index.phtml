@@ -7,6 +7,8 @@
                     <input type="text" class="input-text no-changes" value="" id="productGrid_product_filter_search" name="search">
                     <button style="" class="scalable task" type="button" id="id_search_button"><span>Search</span>
                     </button>
+					<button style="" class="scalable task" type="button" id="id_reset_button"><span>Reset</span>
+					</button>
                 </th>
                 <th align="right">
                     <div class="update_qty" style="display: none;">
@@ -40,6 +42,14 @@
                 jQuery('#loading-mask').css('display', 'none')
                 jQuery('.update_qty').show();
             });
+    });
+
+    /**
+     * Reset
+     **/
+    jQuery('button#id_reset_button').click(function () {
+		jQuery('#productGrid_product_filter_search').val('');
+        jQuery('button#id_search_button').trigger('click');
     });
 
     /**
